@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="container header__inner">
+
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" (click)="closeMenu()">
+      <span class="logo-icon">♥</span>
+      <span class="logo-text">Ace of Hearts</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="header__nav">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="nav-link--active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          class="nav-link">
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Actions -->
+    <div class="header__actions">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" (click)="themeService.toggle()" [attr.aria-label]="themeService.isDark ? 'Activar modo claro' : 'Activar modo oscuro'">
+        @if (themeService.isDark) {
+          <ng-icon name="heroSun" size="20" />
+        } @else {
+          <ng-icon name="heroMoon" size="20" />
+        }
+      </button>
+
+      <!-- Mobile menu button -->
+      <button class="menu-btn" (click)="toggleMenu()" aria-label="Menú">
+        @if (menuOpen()) {
+          <ng-icon name="heroXMark" size="24" />
+        } @else {
+          <ng-icon name="heroBars3" size="24" />
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  @if (menuOpen()) {
+    <nav class="header__mobile-nav">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="nav-link--active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          class="mobile-nav-link"
+          (click)="closeMenu()">
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+  }
+</header>

@@ -1,0 +1,37 @@
+@use '../../../styles/variables';
+@use '../../../styles/mixins' as m;
+
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+
+  &__inner {
+    @include m.flex-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__brand {
+    @include m.flex-center;
+    gap: 0.4rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+
+    .logo-icon {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+
+    .logo-text {
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+  }
+
+  &__copy {
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    margin: 0;
+  }
+}

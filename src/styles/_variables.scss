@@ -1,0 +1,29 @@
+// ============================================
+// LIGHT MODE — Default
+// ============================================
+:root {
+  --color-primary:    #2563EB;
+  --color-accent:     #38BDF8;
+  --color-secondary:  #0F172A;
+  --color-bg:         #F8FAFC;
+  --color-surface:    #FFFFFF;
+  --color-elevated:   #F1F5F9;
+  --color-text:       #1E293B;
+  --color-text-soft:  #64748B;
+  --color-border:     #E2E8F0;
+}
+
+// ============================================
+// DARK MODE
+// ============================================
+.dark {
+  --color-primary:    #3B82F6;
+  --color-accent:     #38BDF8;
+  --color-secondary:  #93C5FD;
+  --color-bg:         #0B1120;
+  --color-surface:    #111827;
+  --color-elevated:   #1E2D45;
+  --color-text:       #F1F5F9;
+  --color-text-soft:  #94A3B8;
+  --color-border:     #1E2D45;
+}
